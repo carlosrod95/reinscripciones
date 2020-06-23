@@ -1,0 +1,92 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+{% csrf_token %}
+<h2>Felicidades , estas inscrito</h2>
+ <br>
+<h3>Imprime esta hoja, recalcamos que este documento no es oficial y se tiene que presentar en la escuela para ser validado y evitar aglomeraciones y posibles contagios</h3>
+ <br>
+ <br>
+ <br>
+<div class="container">
+
+  <table class="table table-borderless">
+    <thead>
+      <tr>
+        <th>Nombre Alumno: </th>
+        <th>Apellido Paterno:</th>
+        <th>Apellido Materno:</th>
+        <th>CURP:  </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ user.profile.nombre }}</td>
+        <td>{{ user.profile.apepaterno }}</td>
+        <td>{{ user.profile.apematerno }}</td>
+        <td>{{ user.profile.curp }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-borderless">
+    <thead>
+      <tr>
+        <th>Matricula: </th>
+        <th>Escuela: </th>
+        <th>Clave Escuela: </th>
+        <th>Grado actual: </th>
+        <th>Entra al grado: </th>
+        <th>Grupo Actual:</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ user.profile.matricula }}</td>
+        {% if user.profile.escuela_type == 1 %}
+                <td>SINDICATO ALBA ROJA NUM. 20 </td>
+                <td>02EES0212Q  </td>
+        {% endif %}
+        <td>{{ user.profile.grado }}</td>
+
+        {% if user.profile.grado == 1 %}
+                <td>2</td>
+        {% endif %}
+        {% if user.profile.grado == 2 %}
+                <td>3</td>
+        {% endif %}           
+        {% if user.profile.grado == 3 %}
+                <td>4</td>
+        {% endif %}
+        {% if user.profile.grado == 4 %}
+                <td>5</td>
+        {% endif %}           
+        {% if user.profile.grado == 5 %}
+                <td>6</td>
+        {% endif %}
+        <td>{{ user.profile.grupo }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-borderless">
+    <thead>
+      <tr>
+        <th>Firma de encargado:</th>
+        <th>Sello de la institucion:</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <button type="button" onclick="javascript:window.print()">Imprimir</button>
+</div>
+{% endblock %}

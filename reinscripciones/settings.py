@@ -25,7 +25,7 @@ SECRET_KEY = '8f6bb236-cd0b-43bf-8536-fc010fa57e4d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['carlos951020.pythonanywhere.com']
 
 # Application references
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
@@ -77,31 +77,29 @@ TEMPLATES = [
 WSGI_APPLICATION = 'reinscripciones.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'djangoCCT',
-        'USER': 'postgres',
-        'PASSWORD': 'Elpadrino1.',
-        'HOST': 'localhost',
-        'PORT': '5432',
-   }
-}
-
 #DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        #'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': 'postgres',
+#        'NAME': 'djangoCCT',
 #        'USER': 'postgres',
-#        'PASSWORD': 'vJ3PtN4waKczHyN9',
-#        'HOST': '10.127.208.3',
+#        'PASSWORD': 'Elpadrino1.',
+#        'HOST': 'localhost',
 #        'PORT': '5432',
-#       
-#    }
+#   }
 #}
 
 
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'carlos951020$Inscripciones',
+        'USER': 'carlos951020',
+        'PASSWORD': 'jadbsigvu',
+        'HOST': 'carlos951020.mysql.pythonanywhere-services.com',
+        'PORT': '3306',
+   }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
